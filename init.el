@@ -6,7 +6,9 @@
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
 values."
-  (setq-default
+    (setq-default evil-escape-key-sequence "kj")
+    (setq-default evil-escape-unordered-key-sequence 1)
+    (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
@@ -39,7 +41,6 @@ values."
      helm
      games
      themes-megapack
-     org
      auto-completion
      better-defaults
      html
@@ -49,13 +50,11 @@ values."
      git
      github
      markdown
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
      spell-checking
      syntax-checking
      version-control
      ranger
+     org
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -133,8 +132,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(sanityinc-solarized-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -256,7 +254,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers t 
+   dotspacemacs-line-numbers `relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -323,12 +321,12 @@ you should place your code here."
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
+   (vector "#ffffff" "#f36c60" "#8bc34a" "#fff59d" "#4dd0e1" "#b39ddb" "#81d4fa" "#263238"))
  '(blink-cursor-mode nil)
- '(custom-enabled-themes (quote (material)))
+ '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "66132890ee1f884b4f8e901f0c61c5ed078809626a547dbefbb201f900d03fd8" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#37474f" t)
  '(hl-sexp-background-color "#1c1f26")
@@ -368,4 +366,4 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "nil" :slant normal :weight normal :height 130 :width normal)))))
+ )
