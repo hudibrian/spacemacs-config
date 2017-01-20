@@ -52,7 +52,6 @@ values."
      markdown
      spell-checking
      syntax-checking
-     version-control
      ranger
      org
      )
@@ -295,7 +294,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (version-control :variables version-control-diff-tool 'diff-hl)
   dotspacemacs-configuration-layers '((markdown :variables markdown-live-preview-engine 'vmd))
   (add-hook 'after-init-hook 'global-company-mode)
   (setq-default js2-basic-offset 2)
